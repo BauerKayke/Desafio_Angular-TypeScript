@@ -1,0 +1,46 @@
+.summary {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border: 1px solid #ECECEC;
+
+}
+
+.summary-title {
+  width: 100%;
+  padding: 10px 15px;
+  border-radius: 3px 3px 0px 0px;
+  border: 1px solid #ECECEC;
+  background: #FDF1EB;
+
+}
+.summary-title h3{
+  font-family: Roboto;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 25px;
+    text-align: left;
+    color: #4E4E4E;
+}
+.summary p {
+  padding: 15px;
+  font-family: Quicksand;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22.75px;
+  letter-spacing: 0.02em;
+  text-align: left;
+}
+
+.summary p button {
+  font-family: Quicksand;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 21.33px;
+  letter-spacing: 0.02em;
+  text-align: left;
+  color: #ED7839;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}

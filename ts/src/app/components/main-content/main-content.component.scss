@@ -1,0 +1,14 @@
+.content {
+  margin: 20px 44px 0px 43px;
+  width: 77.5%;
+  float: right;
+  display: flex;
+  gap: 30px;
+  flex-direction: column;
+}
+
+.content div {
+  display: flex;
+  width: 100%;
+  gap: 3%;
+}

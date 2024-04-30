@@ -1,0 +1,66 @@
+<section class="discuss">
+  <div class="discuss-title">
+    <h3>Discussões</h3>
+  </div>
+  <div class="discuss-text-icon" *ngIf="!createTopicView ">
+    <p>Compatilhe suas ideias ou dúvidas com os autores!</p>
+    <div class="icon-container">
+      <img src="../assets/icone1.png" alt="">
+      <img src="../assets/icone2.png" alt="">
+      <img src="../assets/icone3.png" alt="">
+    </div>
+    <p>
+      Sabia que o maior estímulo no desenvolvimento científico e cultural é a curiosidade? Deixe seus <br>
+      questionamentos ou sugestões para o autor!
+    </p>
+    <div class="division">
+      <hr>
+      <div class="discuss-button">
+        <button class="btn-create-topic" (click)="goCreateTopic()"><img src="../assets/icon - criar.png"
+            alt=""><span>criar
+            tópico</span></button>
+      </div>
+    </div>
+  </div>
+  <div class="topic-form" *ngIf="topicCreated || !isNew">
+    <p>Tem alguma dúvida ou sugestão? Compartilhe seu feedback com os autores!</p>
+    <form (submit)="responseCreate($event, assunto.value, content.value)">
+      <label for="assunto">Assunto:</label>
+      <input class="subject" name="assunto" #assunto [(ngModel)]="subjectValue"
+        placeholder="Defina um tópico sucinto para notificar os autores...">
+      <label for="content">Conteúdo:</label>
+      <textarea class="content" name="content" #content [(ngModel)]="contentValue" cols="30" rows="5"></textarea>
+      <div class="div-create-topic">
+        <button class="btn-send-form" type="submit" *ngIf="isNew">Enviar</button>
+        <button class="btn-send-form" type="submit" *ngIf="!isNew">Salvar</button>
+      </div>
+    </form>
+    <div class="division">
+      <hr>
+    </div>
+  </div>
+
+
+  <div class="discuss-response" *ngIf="response && isNew">
+    <p class="sub-title">Seu tópico foi enviado com sucesso! :D</p>
+    <p class="response-thanks">Agradecemos por sua contribuição, uma notificação será enviada ao seu email assim que seu
+      tópico for respondido!
+    </p>
+    <a class="response-link">Descubra outros trabalhos</a>
+    <div class="division">
+      <hr>
+      <div class="discuss-button">
+        <button class="btn-go-create-topic" (click)="goCreateTopic()">
+          <span>criar novo tópico</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <article>
+    <app-answered-topic *ngFor="let topic of answeredTopics" [key]="topic.key" [subject]="topic.subject"
+      [content]="topic.content" (editTopicClicked)="editTopic($event)" [isNew]="topic.isNew">
+    </app-answered-topic>
+    <app-answered-topic [likesCount]="numberOfLikes"></app-answered-topic>
+  </article>
+</section>

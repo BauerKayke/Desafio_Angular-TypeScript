@@ -1,0 +1,106 @@
+.header {
+  background: #FDF1EB;
+  width: 83.89%;
+  float: right;
+  height: 68px;
+}
+
+.header section {
+  margin-left: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.header-title {
+  font-family: Roboto;
+  color: #725C5C;
+  font-weight: 400;
+  width: 60%;
+}
+
+.header-title p {
+  font-size: 14px;
+}
+
+.header-title p:nth-child(2) {
+  font-size: 22px;
+}
+
+.header-user-languge {
+  display: flex;
+  gap: 6.85%;
+  margin-right: 36px;
+}
+
+.language-button {
+  border: 1px solid #CCCCCC;
+  background-color: #FDF1EB;
+  border-radius: 3px;
+  padding: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 97px;
+  height: 34px;
+}
+
+.language-button:hover {
+  background-color: #e9ecef;
+}
+
+.language-button .dropdown {
+  width: 6px;
+  height: 4px;
+  margin: 5px;
+}
+
+.language-button img {
+  margin-right: 5px;
+  width: 22px;
+  height: 21px;
+}
+
+.language-button span {
+  font-size: 14px;
+  color: #333;
+  font-family: Quicksand;
+  line-height: 17.5px;
+  width: 42px;
+}
+
+.user-menu-wrapper {
+  display: flex;
+  margin-right: 36px;
+  font-size: 12px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 7px;
+}
+
+.user-icon img {
+  border-radius: 50%;
+}
+
+.user-icon {
+  position: relative;
+}
+
+.notification-badge {
+  padding: 3px;
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  gap: 10px;
+  background: #F85959;
+  color: white;
+  border-radius: 50%;
+  font-family: Roboto;
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 11.72px;
+  letter-spacing: -0.02em;
+}

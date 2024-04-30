@@ -1,0 +1,217 @@
+@mixin tipografia-Roboto16-700{
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 18.75px;
+  text-align: left;
+  color: #ED7839;
+}
+@mixin robotoTitle{
+    font-family: Roboto;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 25px;
+    text-align: left;
+    color:#4E4E4E;
+}
+@mixin quicksand14{
+  font-family: Quicksand;
+  font-size: 14px;
+}
+@mixin displayFlex{
+  display: flex;
+  align-items: center;
+}
+@mixin btn-go-create-topic($tamanho){
+  font-weight: 700;
+  background: linear-gradient(180deg, #FEB254 0%, #F0813D 100%);
+  box-shadow: 0px 2px 2px 0px #0000003D;
+  border: none;
+  border-radius: 4px;
+  justify-content: center;
+  gap: 5px;
+  position: absolute;
+  left: $tamanho;
+  top: -15px;
+  cursor: pointer;
+}
+.discuss {
+  @include displayFlex();
+  justify-content: center;
+  flex-direction: column;
+  border: 1px solid #ECECEC;
+  height: 100%;
+  margin-bottom: 50px;
+  gap: 15px;
+}
+
+.discuss-title {
+  width: 100%;
+  padding: 10px 15px;
+  border-radius: 3px 3px 0px 0px;
+  border: 1px solid #ECECEC;
+  background: #FDF1EB;
+
+}
+.discuss-title h3{
+  @include robotoTitle();
+}
+
+.discuss-text-icon p:first-of-type {
+  font-family: Roboto;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 21.09px;
+  color: #ED7839;
+  text-align: center;
+  margin-bottom: 13px;
+}
+
+.discuss-text-icon p:last-of-type {
+  @include quicksand14();
+  font-weight: 400;
+  line-height: 19.25px;
+  text-align: center;
+  margin-top: 21px;
+}
+
+.discuss-text-icon {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 14px;
+  margin: 0px 0px 15px 0px;
+}
+
+.discuss-text-icon .btn-create-topic {
+  @include quicksand14();
+  @include btn-go-create-topic(33vw);
+  width: 133px;
+  height: 32px;
+  @include displayFlex();
+}
+
+.division {
+  margin-top: 14px;
+  width: 74vw;
+  position: relative;
+}
+
+hr {
+  width: 100%;
+  border: 1px solid #E7E7E7;
+}
+
+.btn-create-topic span {
+  font-family: Quicksand;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 16px;
+  text-align: center;
+  color: #fff;
+}
+
+.discuss .icon-container {
+  width: 370px;
+  @include displayFlex();
+  flex-direction: row;
+  justify-content: space-around;
+}
+div.topic-form{
+  width: 100%;
+}
+.topic-form p{
+  @include quicksand14();
+  font-weight: 400;
+  line-height: 17.5px;
+  text-align: center;
+  color: #5C5C5C;
+  margin-top: 15px;
+}
+.topic-form .division{
+  width: 74.5vw;
+  margin-bottom: 15px ;
+  margin-left: 20px;
+}
+form{
+  display: flex;
+  flex-direction: column;
+  margin-top: 22px;
+}
+form label{
+  margin: 0px 14.95px 0px 17.53px;
+  @include tipografia-Roboto16-700();
+}
+.subject, .content {
+  border-radius:3px ;
+  border: 1px solid #CCCCCC;
+  margin: 0px 14.95px 0px 17.53px;
+  @include quicksand14();
+  font-weight: 400;
+  line-height: 17.5px;
+  padding: 10px;
+}
+.subject{
+  height: 39px;
+  margin-bottom: 10px;
+}
+.div-create-topic{
+  margin: 0px 14.95px 0px 17.53px;
+  background: #EAF1F2;
+  border-radius: 0px 0px 4px 4px;
+  border: 1px solid #CCCCCC;
+}
+.div-create-topic button{
+  height: 31px;
+  float: right;
+  background: linear-gradient(180deg, #FEB154 0%, #F1833E 100%);
+  color: #fff;
+  width: 205.1px;
+  border: none;
+  border-radius: 0px 0px 3px 0px;
+  font-family: Quicksand;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 16px;
+  text-align: center;
+}
+.discuss-response{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 14px;
+  margin: 15px 0px;
+}
+.discuss-response .btn-go-create-topic{
+  @include btn-go-create-topic(30vw);
+  @include quicksand14();
+  @include displayFlex();
+  width: 235.15px;
+  height: 32px;
+  color: #fff;
+}
+.sub-title{
+  font-family: Roboto;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 21.09px;
+  text-align: center;
+  color: #ED7839;
+}
+.response-thanks, .response-link{
+  @include quicksand14();
+}
+.response-thanks{
+  font-weight: 400;
+  line-height: 19.25px;
+}
+.response-link{
+  margin: 15px 0px 33px 0px;
+  font-weight: 500;
+  line-height: 19.25px;
+  text-align: center;
+  color: #ED7839;
+  text-decoration: underline;
+}

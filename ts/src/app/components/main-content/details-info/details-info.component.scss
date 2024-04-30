@@ -1,0 +1,132 @@
+.container-info-icon {
+  height: 512px;
+}
+
+.container-icon button {
+  background-color: #ED7839;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.container-icon {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 5px;
+}
+
+.container-icon a {
+  text-decoration: none;
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 18.75px;
+  text-align: center;
+  color: #ffff;
+}
+
+.container-quote {
+  font-family: Roboto;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 25px;
+  letter-spacing: 0.05em;
+  text-align: right;
+  color: #ED7839;
+  margin: 15px 0px 5px 0px;
+}
+
+.details-wrapper {
+  border-radius: 3px;
+  border: 1px solid #E7E7E7;
+  height: 439px;
+
+}
+
+.details-wrapper div {
+  padding: 0px 15px;
+}
+
+.details-wrapper::-webkit-scrollbar-thumb {
+  background-color: #BFBFBF;
+  border-radius: 20px;
+  border: none;
+}
+
+.details-wrapper-title {
+  border: 1px solid #ECECEC;
+  background-color: #FDF1EB;
+  display: flex;
+  padding: 5px;
+  margin-bottom: 15px;
+  color: #4E4E4E;
+}
+
+.details-wrapper-title h3 {
+  font-family: Roboto;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 25px;
+  text-align: left;
+  padding: 11px 15px 9px 15px;
+}
+
+.details-content {
+  font-size: 12px;
+  font-family: Quicksand;
+  letter-spacing: 0.02em;
+  text-align: left;
+  color: #5C5C5C;
+
+}
+
+.details-content div {
+  margin-bottom: 5px;
+}
+
+.poster-content {
+  line-height: 14.4px;
+}
+
+.eixo-content strong,
+.poster-content strong,
+.keyword-content strong {
+  font-weight: 700;
+}
+
+.details-content .keyword-content,
+.details-content .authors-content {
+  margin-bottom: 2.5vh;
+}
+
+.university-content p {
+  font-weight: 400;
+  line-height: 12px;
+}
+
+.authors-content span sup,
+.university-content span sup {
+  font-size: 8px;
+  font-weight: 400;
+  line-height: 12px;
+  color: #5C5C5C;
+}
+
+.authors-content p strong {
+  font-weight: 700;
+}
+
+.authors-content p {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16.8px;
+}
+

@@ -1,0 +1,18 @@
+.container-title-video {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 19px;
+  height: 512px;
+
+}
+
+.container-title h2 {
+  color: #ED7839;
+  font-weight: 900;
+  font-family: Roboto;
+  font-size: 20px;
+  line-height: 25px;
+  letter-spacing: 0.05em;
+  text-align: left;
+}

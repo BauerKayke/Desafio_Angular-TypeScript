@@ -1,0 +1,16 @@
+<aside>
+  <div class="aside-title">
+    <h2>SLACA 2019</h2>
+  </div>
+  <div class="aside-logo">
+    <img src="../assets/Logo evento.png" alt="">
+  </div>
+  <nav>
+    <ul class="navigation">
+      <li *ngFor="let item of items; let i = index" [class.active]="activeIndex === i" (click)="activeIndex = i">
+        <a>{{ item.name }}</a>
+      </li>
+
+    </ul>
+  </nav>
+</aside>

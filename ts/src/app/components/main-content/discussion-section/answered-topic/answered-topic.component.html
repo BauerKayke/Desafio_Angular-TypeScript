@@ -1,0 +1,116 @@
+<div class="answered-topic-container" #commentsContainer>
+  <div class="answered-topic" #commentsContainer>
+    <div>
+      <h4 class="ops-topic-subject">{{ subject || 'Assunto da pergunta' }}</h4>
+      <p>Autor</p>
+    </div>
+    <div class="answered-text">
+      <p *ngIf="content; else defaultContent">
+        {{ content }}
+      </p>
+      <ng-template #defaultContent>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit et reiciendis dolorum laboriosam ab ullam totam
+          tempora accusamus! Excepturi voluptates dignissimos quos rem est! Quos earum iste incidunt placeat totam!
+        </p>
+      </ng-template>
+      <div class="answered-icon">
+        <img src="../../../../assets/mais informações.png" alt="">
+        <button class="like" (click)="incrementLikes()"><img src="../../../../assets/green apples 22.png"
+            alt=""></button>
+        <span>{{ likesCount === 1 ? '1 like' : likesCount + ' likes' }}</span>
+        <button class="number-response" (click)="toggleComments()"><span>{{ numberOfResponses }} resposta{{
+            numberOfResponses !== 1 ? 's' : '' }}</span></button>
+      </div>
+    </div>
+  </div>
+  <div class="blur-container" *ngIf="!isNew"></div>
+  <div class="message-container" *ngIf="!isNew">
+    <div class="message">
+      <img src="../../../../../assets/ (1).png" alt="">
+      <p>Aguardando feedback dos autores</p>
+      <button class="edit" (click)="editTopic()">Editar tópico</button>
+    </div>
+  </div>
+
+  <div class="comments-container verified first" [ngClass]="{ 'invisible': !showComments }">
+    <div>
+      <div class="author-icon">
+        <p>Adriano da Silva</p>
+        <div class="verified-badge">
+          <p>Autor</p>
+          <img src="../../../../assets/.png" alt="">
+        </div>
+      </div>
+      <p class="comments-text">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde quod voluptate maiores explicabo similique saepe,
+        perferendis autem! Hic saepe, dolorem, dicta temporibus earum enim fuga distinctio maiores laborum quis quaerat!
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse quam inventore voluptates! Alias fugit, ea
+        quibusdam velit suscipit culpa totam ipsa consequatur vel! Doloribus provident beatae repudiandae enim hic eius.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste veritatis nostrum voluptatem quibusdam placeat
+        omnis consequatur facere ab sit officiis non enim ex, distinctio tenetur, fuga corporis hic ea incidunt?
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, nostrum! Ad cum vitae perferendis dolorem ut
+        consequatur, libero non blanditiis, veniam dolor temporibus magni, velit dolorum impedit voluptates fuga enim!
+      </p>
+    </div>
+  </div>
+  <div class="comments-container verified" [ngClass]="{ 'invisible': !showComments }">
+    <div>
+      <div class="author-icon">
+        <p>Adriano da Silva</p>
+        <div class="verified-badge">
+          <p>Autor</p>
+          <img src="../../../../assets/.png" alt="">
+        </div>
+      </div>
+      <p class="comments-text">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde quod voluptate maiores explicabo similique saepe,
+        perferendis autem! Hic saepe, dolorem, dicta temporibus earum enim fuga distinctio maiores laborum quis quaerat!
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse quam inventore voluptates! Alias fugit, ea
+        quibusdam velit suscipit culpa totam ipsa consequatur vel! Doloribus provident beatae repudiandae enim hic eius.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste veritatis nostrum voluptatem quibusdam placeat
+        omnis consequatur facere ab sit officiis non enim ex, distinctio tenetur, fuga corporis hic ea incidunt?
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, nostrum! Ad cum vitae perferendis dolorem ut
+        consequatur, libero non blanditiis, veniam dolor temporibus magni, velit dolorum impedit voluptates fuga enim!
+      </p>
+    </div>
+  </div>
+  <div class="comments-container" [ngClass]="{ 'invisible': !showComments }">
+    <div>
+      <div class="author-icon">
+        <p>Adriano da Silva</p>
+      </div>
+      <p class="comments-text">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde quod voluptate maiores explicabo similique saepe,
+        perferendis autem! Hic saepe, dolorem, dicta temporibus earum enim fuga distinctio maiores laborum quis quaerat!
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse quam inventore voluptates! Alias fugit, ea
+        quibusdam velit suscipit culpa totam ipsa consequatur vel! Doloribus provident beatae repudiandae enim hic eius.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste veritatis nostrum voluptatem quibusdam placeat
+        omnis consequatur facere ab sit officiis non enim ex, distinctio tenetur, fuga corporis hic ea incidunt?
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, nostrum! Ad cum vitae perferendis dolorem ut
+        consequatur, libero non blanditiis, veniam dolor temporibus magni, velit dolorum impedit voluptates fuga enim!
+      </p>
+    </div>
+  </div>
+  <div class="comments-container verified" [ngClass]="{ 'invisible': !showComments }">
+    <div>
+      <div class="author-icon">
+        <p>Adriano da Silva</p>
+        <div class="verified-badge">
+          <p>Coautor</p>
+          <img src="../../../../assets/.png" alt="">
+        </div>
+      </div>
+      <p class="comments-text">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde quod voluptate maiores explicabo similique saepe,
+        perferendis autem! Hic saepe, dolorem, dicta temporibus earum enim fuga distinctio maiores laborum quis quaerat!
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse quam inventore voluptates! Alias fugit, ea
+        quibusdam velit suscipit culpa totam ipsa consequatur vel! Doloribus provident beatae repudiandae enim hic eius.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste veritatis nostrum voluptatem quibusdam placeat
+        omnis consequatur facere ab sit officiis non enim ex, distinctio tenetur, fuga corporis hic ea incidunt?
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, nostrum! Ad cum vitae perferendis dolorem ut
+        consequatur, libero non blanditiis, veniam dolor temporibus magni, velit dolorum impedit voluptates fuga enim!
+      </p>
+    </div>
+  </div>
+</div>
