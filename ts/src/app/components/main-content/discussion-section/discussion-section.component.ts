@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { event } from 'cypress/types/jquery';
 
 @Component({
   selector: 'app-discussion-section',
@@ -25,6 +24,7 @@ export class DiscussionSectionComponent {
   isNew: boolean = true;
   key: number = 0;
   topic: any = null;
+
   constructor() {}
 
   goCreateTopic() {
@@ -38,48 +38,40 @@ export class DiscussionSectionComponent {
     }
   }
 
-  responseCreate(event: Event, subject: string, content: string) {
+  responseCreate(event: Event) {
     event.preventDefault();
     this.response = !this.response;
     this.topicCreated = !this.topicCreated;
     this.answeredTopics.push({
       key: this.topicCreatedKey,
-      subject: subject || 'Default subject',
-      content: content || 'Default content',
+      subject: this.subjectValue || 'Default subject',
+      content: this.contentValue || 'Default content',
       likes: 0,
       isNew: true,
     });
     this.topicCreatedKey++;
   }
-  submit(e: Event, subject: string, content: string) {
-    console.log(this.isNew);
+
+  submitTopic(e: Event) {
+    e.preventDefault();
     if (!this.isNew) {
-      this.responseCreate(e, subject, content);
+      this.editTopic(this.key, this.subjectValue, this.contentValue);
     } else {
-      this.editTopic(this.key);
-    }
-  }
-  editTopic(key: number) {
-    const topicIndex = this.answeredTopics.findIndex(
-      (topic) => topic.key === key
-    );
-    if (topicIndex !== -1) {
-      const editedTopic = this.answeredTopics[topicIndex];
-      this.subjectValue = editedTopic.subject;
-      this.contentValue = editedTopic.content;
-      this.key = editedTopic.key;
-      this.isNew = false;
+      this.responseCreate(e);
     }
   }
 
-  submitEditTopic() {
+  editTopic(key: number, subject: string, content: string) {
     const topicIndex = this.answeredTopics.findIndex(
-      (topic) => topic.key === this.key
+      (topic) => topic.key === key
     );
-    if (topicIndex !== -1) {
-      this.answeredTopics[topicIndex].subject = this.subjectValue;
-      this.answeredTopics[topicIndex].content = this.contentValue;
-      this.isNew = true;
+    if (topicIndex === key) {
+      const editedTopic = this.answeredTopics[topicIndex];
+      editedTopic.subject = subject;
+      editedTopic.content = content;
+      this.isNew = !this.isNew;
+      this.subjectValue = '';
+      this.contentValue = '';
     }
   }
 }

@@ -24,17 +24,17 @@
   </div>
   <div class="topic-form" *ngIf="topicCreated || !isNew">
     <p>Tem alguma dúvida ou sugestão? Compartilhe seu feedback com os autores!</p>
-    <form (submit)="responseCreate($event, assunto.value, content.value)">
+    <form (submit)="submitTopic($event)">
       <label for="assunto">Assunto:</label>
-      <input class="subject" name="assunto" #assunto [(ngModel)]="subjectValue"
+      <input class="subject" name="assunto" #subject [(ngModel)]="subjectValue"
         placeholder="Defina um tópico sucinto para notificar os autores...">
       <label for="content">Conteúdo:</label>
       <textarea class="content" name="content" #content [(ngModel)]="contentValue" cols="30" rows="5"></textarea>
       <div class="div-create-topic">
-        <button class="btn-send-form" type="submit" *ngIf="isNew">Enviar</button>
-        <button class="btn-send-form" type="submit" *ngIf="!isNew">Salvar</button>
+        <button class="btn-send-form" type="submit">{{ isNew ? 'Enviar' : 'Salvar' }}</button>
       </div>
     </form>
+
     <div class="division">
       <hr>
     </div>
@@ -59,7 +59,8 @@
 
   <article>
     <app-answered-topic *ngFor="let topic of answeredTopics" [key]="topic.key" [subject]="topic.subject"
-      [content]="topic.content" (editTopicClicked)="editTopic($event)" [isNew]="topic.isNew">
+      [content]="topic.content" (editTopicClicked)="editTopic($event, subjectValue, contentValue)"
+      [isNew]="topic.isNew">
     </app-answered-topic>
     <app-answered-topic [likesCount]="numberOfLikes"></app-answered-topic>
   </article>
