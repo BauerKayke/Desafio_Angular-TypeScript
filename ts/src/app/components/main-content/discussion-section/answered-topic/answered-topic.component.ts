@@ -30,7 +30,6 @@ export class AnsweredTopicComponent implements AfterViewInit {
 
   constructor(private cd: ChangeDetectorRef) {}
   ngOnInit() {
-    console.log(this.isNew);
     this.isNew = !this.isNew;
   }
   ngAfterViewInit() {
@@ -50,7 +49,6 @@ export class AnsweredTopicComponent implements AfterViewInit {
   }
 
   private getNumberOfResponses(): number {
-    console.log('Foi aqui');
     const nativeElement = this.commentsContainer?.nativeElement;
     if (nativeElement) {
       const commentsContainers = nativeElement.querySelectorAll(

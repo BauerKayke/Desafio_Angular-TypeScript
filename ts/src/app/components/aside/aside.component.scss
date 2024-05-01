@@ -42,10 +42,13 @@ aside {
 }
 
 .navigation a {
+  font-family: Quicksand;
+  line-height: 18.75px;
   text-decoration: none;
   color: #725c5c;
   font-size: 15px;
   font-weight: 500;
+  margin-left: 8px;
 }
 
 .navigation li:hover {

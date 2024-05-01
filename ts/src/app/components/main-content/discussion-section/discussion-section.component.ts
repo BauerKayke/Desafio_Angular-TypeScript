@@ -23,7 +23,6 @@ export class DiscussionSectionComponent {
   contentValue: string = '';
   isNew: boolean = true;
   key: number = 0;
-  topic: any = null;
 
   constructor() {}
 
